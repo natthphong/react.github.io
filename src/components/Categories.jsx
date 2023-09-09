@@ -10,6 +10,7 @@ const Container = styled.div`
   ${mobile({ padding: "0px", flexDirection:"column" })}
 
 `;
+console.log(categories)
 
 const Categories = () => {
   return (
