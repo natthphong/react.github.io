@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/react.github.io/static/css/main.6036239b.css",
-    "main.js": "/react.github.io/static/js/main.4df8053a.js",
+    "main.js": "/react.github.io/static/js/main.ef0410fa.js",
     "index.html": "/react.github.io/index.html",
     "main.6036239b.css.map": "/react.github.io/static/css/main.6036239b.css.map",
-    "main.4df8053a.js.map": "/react.github.io/static/js/main.4df8053a.js.map"
+    "main.ef0410fa.js.map": "/react.github.io/static/js/main.ef0410fa.js.map"
   },
   "entrypoints": [
     "static/css/main.6036239b.css",
-    "static/js/main.4df8053a.js"
+    "static/js/main.ef0410fa.js"
   ]
 }
