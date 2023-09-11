@@ -5,6 +5,7 @@ import { sliderItems } from "../data";
 import { mobile } from "../responsive";
 import './css/silder.css'
 import { useNavigate } from "react-router";
+import { useEffect } from "react";
 
 const Container = styled.div`
   width: 100%;
@@ -84,11 +85,20 @@ const Button = styled.button`
 const Slider = () => {
   const navigate = useNavigate();
   const [slideIndex, setSlideIndex] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleClick("right");
+    }, 5000);
+
+    return () => clearInterval(interval); 
+  }, );
+
+
   const handleClick = (direction) => {
     if (direction === "left") {
-      setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
+      setSlideIndex(slideIndex > 0 ? slideIndex - 1 : sliderItems.length-1);
     } else {
-      setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
+      setSlideIndex(slideIndex < sliderItems.length-1 ? slideIndex + 1 : 0);
     }
   };
   return (
