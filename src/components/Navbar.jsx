@@ -6,13 +6,18 @@ import {  useNavigate } from "react-router-dom";
 
 const Container = styled.div`
   height: 60px;
-  ${mobile({ height: "50px" })}
+  ${mobile({ height: "70px" })}
 `;
 const Button = styled.button`
   padding: 10px;
   font-size: 16px;
   background-color: transparent;
   cursor: pointer;
+  ${mobile({ 
+    padding: "5px",
+    fontSize: "10px",
+    color: "black"
+  })}
 `;
 
 const Wrapper = styled.div`
@@ -20,7 +25,11 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  ${mobile({ padding: "10px 0px" })}
+  ${mobile({ 
+    padding: "10px 0px",
+    fontSize: "12px",
+    color: "black"
+  })}
 `;
 
 const Left = styled.div`
@@ -45,7 +54,7 @@ const Center = styled.div`
 const Logo = styled.h1`
 cursor: pointer;
   font-weight: bold;
-  ${mobile({ fontSize: "24px" })}
+  ${mobile({ fontSize: "20px" })}
 `;
 const Right = styled.div`
   flex: 1;

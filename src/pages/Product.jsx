@@ -39,6 +39,9 @@ const Title = styled.h1`
 
 const Desc = styled.p`
   margin: 20px 0px;
+  max-width: 600px;
+  word-wrap: break-word;
+  line-height: 1.7;
 `;
 
 const Price = styled.span`

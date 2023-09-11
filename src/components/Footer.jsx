@@ -25,6 +25,7 @@ const Left = styled.div`
 const Logo = styled.h1``;
 
 const Desc = styled.p`
+word-wrap: break-word;
   margin: 20px 0px;
 `;
 
@@ -42,6 +43,9 @@ const SocialIcon = styled.div`
   align-items: center;
   justify-content: center;
   margin-right: 20px;
+  cursor: pointer;
+  text-decoration: none;
+
 `;
 
 const Center = styled.div`
@@ -88,24 +92,23 @@ const Footer = () => {
   return (
     <Container>
       <Left>
-        <Logo>LAMA.</Logo>
+        <Logo>TAR.</Logo>
         <Desc>
-          There are many variations of passages of Lorem Ipsum available, but
-          the majority have suffered alteration in some form, by injected
-          humour, or randomised words which don’t look even slightly believable.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut veniam eos deserunt in necessitatibus nihil officiis id placeat atque iste inventore voluptatem fugiat iure obcaecati minus praesentium, modi excepturi earum.
         </Desc>
         <SocialContainer>
           <SocialIcon color="3B5999">
-            <Facebook />
+          <a  style={{ textDecoration: 'none', color: 'white' }} href="https://www.facebook.com/Tatazaza3a/"><Facebook /></a>
+          
           </SocialIcon>
           <SocialIcon color="E4405F">
-            <Instagram />
+            <a  style={{ textDecoration: 'none', color: 'white' }} href="https://www.instagram.com/"><Instagram /></a>
           </SocialIcon>
           <SocialIcon color="55ACEE">
-            <Twitter />
+          <a  style={{ textDecoration: 'none', color: 'white' }} href="https://www.instagram.com/"><Twitter /></a>
           </SocialIcon>
           <SocialIcon color="E60023">
-            <Pinterest />
+          <a  style={{ textDecoration: 'none', color: 'white' }} href="https://www.instagram.com/"><Pinterest /></a>
           </SocialIcon>
         </SocialContainer>
       </Left>
@@ -127,10 +130,10 @@ const Footer = () => {
       <Right>
         <Title>Contact</Title>
         <ContactItem>
-          <Room style={{marginRight:"10px"}}/> 622 Dixie Path , South Tobinchester 98336
+          <Room style={{marginRight:"10px"}}/> 221 kamnanmean , bangkok 10150
         </ContactItem>
         <ContactItem>
-          <Phone style={{marginRight:"10px"}}/> +1 234 56 78
+          <Phone style={{marginRight:"10px"}}/> +66 94324 8965
         </ContactItem>
         <ContactItem>
           <MailOutline style={{marginRight:"10px"}} /> contact@lama.dev

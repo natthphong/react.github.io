@@ -4,7 +4,7 @@ import {
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-
+import './css/product-card.css'
 const Info = styled.div`
   opacity: 0;
   width: 100%;
@@ -75,6 +75,7 @@ const Product = ({ item }) => {
       }}>
       <Circle />
       <Image src={item.img} />
+       <div className="right-size">{item.title}</div>
       <Info>
         <Icon>
           <SearchOutlined   />
