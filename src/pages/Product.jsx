@@ -5,6 +5,8 @@ import Navbar from "../components/Navbar";
 import Newsletter from "../components/Newsletter";
 import { mobile } from "../responsive";
 import { useLocation, useNavigate } from "react-router";
+import { useEffect } from "react";
+import { useState } from "react";
 
 const Container = styled.div``;
 
@@ -48,37 +50,60 @@ const Price = styled.span`
 
 
 
-const Product = () => {
-  const navigate = useNavigate()
-  window.scrollTo(0, 0)
+export default function Product (){
+  const navigate = useNavigate();
   const location = useLocation();
-  const item = location.state;
-  console.log('item' , item)
+  const [product ,setProduct] = useState({})
+  useEffect(() =>  {
+    window.scrollTo(0,0)
+   
+    
   
-  if(item === undefined || item===null){
-    navigate("/products")
-  }
+    window.scrollTo(0,0);
+    
+    const check = async ()=>{
+      const item = await location.state;
+      console.log(item === null);
+      if (item === null || item === undefined) {
+        console.log("first2");
+        navigate("/");
+      }
+      setProduct(item)
+    }
+    check()
+    
+  
+  }, []); 
+
   return (
     <Container>
-      <Navbar />
+    <Navbar />
       <Announcement />
       <Wrapper>
         <ImgContainer>
-          <Image src={item||"https://github.com/natthphong/images/blob/main/default/1.png?raw=true"} />
+          <Image src={product.img || "https://github.com/natthphong/images/blob/main/default/1.png?raw=true"} />
         </ImgContainer>
         <InfoContainer>
-          <Title>{item || "title"}</Title>
+          <Title>{product.title || "title"}</Title>
           <Desc>
-            {item.desc || "Desc"}
+            {product.desc || "Desc"}
           </Desc>
-          <Price>{item||"0"} บาท</Price>
+          <Price>{product.price || "0"} บาท</Price>
           
         </InfoContainer>
       </Wrapper>
       <Newsletter />
       <Footer />
+     
     </Container>
   );
 };
 
-export default Product;
+
+
+
+
+
+
+
+
