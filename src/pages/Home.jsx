@@ -6,12 +6,15 @@ import Newsletter from "../components/Newsletter";
 import Products from "../components/Products";
 import Slider from "../components/Slider";
 import { popularProducts } from "../data";
+import Announcement from "../components/Announcement";
+;
 
 const Home = () => {
   return (
     <div>
     
       <Navbar />
+      <Announcement />
       <Slider />
       <Categories />
       <Products props={popularProducts}/>

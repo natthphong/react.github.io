@@ -1,12 +1,18 @@
-import { Badge } from "@material-ui/core";
-import { Search, ShoppingCartOutlined } from "@material-ui/icons";
+
 import React from "react";
 import styled from "styled-components";
 import { mobile } from "../responsive";
+import {  useNavigate } from "react-router-dom";
 
 const Container = styled.div`
   height: 60px;
   ${mobile({ height: "50px" })}
+`;
+const Button = styled.button`
+  padding: 10px;
+  font-size: 16px;
+  background-color: transparent;
+  cursor: pointer;
 `;
 
 const Wrapper = styled.div`
@@ -29,18 +35,7 @@ const Language = styled.span`
   ${mobile({ display: "none" })}
 `;
 
-const SearchContainer = styled.div`
-  border: 0.5px solid lightgray;
-  display: flex;
-  align-items: center;
-  margin-left: 25px;
-  padding: 5px;
-`;
 
-const Input = styled.input`
-  border: none;
-  ${mobile({ width: "50px" })}
-`;
 
 const Center = styled.div`
   flex: 1;
@@ -48,6 +43,7 @@ const Center = styled.div`
 `;
 
 const Logo = styled.h1`
+cursor: pointer;
   font-weight: bold;
   ${mobile({ fontSize: "24px" })}
 `;
@@ -67,28 +63,31 @@ const MenuItem = styled.div`
 `;
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  
+
   return (
     <Container>
       <Wrapper>
         <Left>
-          <Language>EN</Language>
-          <SearchContainer>
-            <Input placeholder="Search" />
-            <Search style={{ color: "gray", fontSize: 16 }} />
-          </SearchContainer>
+          <Language>TH</Language>
+          <Logo style={{ display: 'flex', alignItems: 'center', marginLeft: '30px' }}>
+          <Button onClick={(e) => navigate('/')}>Home</Button>
+        </Logo>
         </Left>
         <Center>
-          <Logo>LAMA.</Logo>
+        <div onClick={(e) => navigate('/')}>
+        <Logo>NAME PROJECT</Logo></div>
+         
         </Center>
         <Right>
           <MenuItem>
-          <a href="/#/products">REGISTER</a>
+          <Button onClick={(e)=>navigate('/products')}>Product</Button>
           </MenuItem>
-          <MenuItem>SIGN IN</MenuItem>
+          <MenuItem>  <Button onClick={(e)=>  window.scrollTo(0, document.body.scrollHeight) }>Contact</Button>
+          </MenuItem>
           <MenuItem>
-            <Badge badgeContent={4} color="primary">
-              <ShoppingCartOutlined />
-            </Badge>
+          
           </MenuItem>
         </Right>
       </Wrapper>

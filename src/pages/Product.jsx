@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Newsletter from "../components/Newsletter";
 import { mobile } from "../responsive";
-import { useLocation } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 
 const Container = styled.div``;
 
@@ -49,23 +49,29 @@ const Price = styled.span`
 
 
 const Product = () => {
+  const navigate = useNavigate()
+  window.scrollTo(0, 0)
   const location = useLocation();
   const item = location.state;
-console.log(item)
+  console.log('item' , item)
+  
+  if(item === undefined || item===null){
+    navigate("/products")
+  }
   return (
     <Container>
       <Navbar />
       <Announcement />
       <Wrapper>
         <ImgContainer>
-          <Image src={item.img||"https://github.com/natthphong/images/blob/main/default/1.png?raw=true"} />
+          <Image src={item||"https://github.com/natthphong/images/blob/main/default/1.png?raw=true"} />
         </ImgContainer>
         <InfoContainer>
-          <Title>{item.title || "title"}</Title>
+          <Title>{item || "title"}</Title>
           <Desc>
             {item.desc || "Desc"}
           </Desc>
-          <Price>{item.price||"0"} บาท</Price>
+          <Price>{item||"0"} บาท</Price>
           
         </InfoContainer>
       </Wrapper>

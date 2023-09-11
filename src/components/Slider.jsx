@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { sliderItems } from "../data";
 import { mobile } from "../responsive";
 import './css/silder.css'
+import { useNavigate } from "react-router";
 
 const Container = styled.div`
   width: 100%;
@@ -81,6 +82,7 @@ const Button = styled.button`
 `;
 
 const Slider = () => {
+  const navigate = useNavigate();
   const [slideIndex, setSlideIndex] = useState(0);
   const handleClick = (direction) => {
     if (direction === "left") {
@@ -103,7 +105,7 @@ const Slider = () => {
             <InfoContainer>
               <Title>{item.title}</Title>
               <Desc>{item.desc}</Desc>
-              <Button>SHOW NOW</Button>
+              <Button onClick={(e)=>navigate('/products')}>Show More</Button>
             </InfoContainer>
           </Slide>
         ))}
