@@ -18,19 +18,23 @@ const Wrapper = styled.div`
 
 const ImgContainer = styled.div`
   flex: 1;
+  
 `;
 
 const Image = styled.img`
   width: 100%;
   height: 90vh;
-  object-fit: cover;
   ${mobile({ height: "40vh" })}
 `;
 
 const InfoContainer = styled.div`
   flex: 1;
+  max-width: 50%;
   padding: 0px 50px;
-  ${mobile({ padding: "10px" })}
+  ${mobile({ 
+    padding: "10px",
+    maxWidth: "100%"
+  })}
 `;
 
 const Title = styled.h1`
@@ -39,7 +43,6 @@ const Title = styled.h1`
 
 const Desc = styled.p`
   margin: 20px 0px;
-  max-width: 600px;
   word-wrap: break-word;
   line-height: 1.7;
 `;
