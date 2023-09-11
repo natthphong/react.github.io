@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://src/components/css/silder.css"],"names":[],"mappings":"AAAA,MACI,YAAa,CACb,sBAAuB,CACvB,kBACJ,CAEA,cACI,sBAAwB,CACxB,iBACJ","file":"main.01653fc5.chunk.css","sourcesContent":[".test{\n    display: flex;\n    justify-content: center;\n    align-items: center;    \n}\n\n.image-circle{\n    border: 10px solid white;\n    border-radius: 50%;\n}"]}
