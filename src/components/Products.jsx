@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import { popularProducts } from "../data";
 import Product from "./Product";
-
+import React from 'react'
 const Container = styled.div`
     padding: 20px;
     display: flex;
@@ -10,14 +9,16 @@ const Container = styled.div`
 `;
 
 
-const Products = () => {
+export default function Products({props}) {
+  console.log(props)
+  const products = props 
   return (
     <Container>
-      {popularProducts.map((item) => (
+      {products.map((item) => (
         <Product item={item} key={item.id} />
       ))}
     </Container>
   );
-};
+}
 
-export default Products;
+

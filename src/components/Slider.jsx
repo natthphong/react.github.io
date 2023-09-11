@@ -3,6 +3,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import { sliderItems } from "../data";
 import { mobile } from "../responsive";
+import './css/silder.css'
 
 const Container = styled.div`
   width: 100%;
@@ -96,8 +97,8 @@ const Slider = () => {
       <Wrapper slideIndex={slideIndex}>
         {sliderItems.map((item) => (
           <Slide bg={item.bg} key={item.id}>
-            <ImgContainer>
-              <Image src={item.img} />
+            <ImgContainer className="test">
+              <Image src={item.img} className="image-circle" />
             </ImgContainer>
             <InfoContainer>
               <Title>{item.title}</Title>

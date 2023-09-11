@@ -5,7 +5,7 @@ import Products from "../components/Products";
 import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
 import { mobile } from "../responsive";
-
+import { allProducts } from "../data";
 const Container = styled.div``;
 
 const Title = styled.h1`
@@ -76,7 +76,7 @@ const ProductList = () => {
           </Select>
         </Filter>
       </FilterContainer>
-      <Products />
+      <Products props={allProducts}/>
       <Newsletter />
       <Footer />
     </Container>

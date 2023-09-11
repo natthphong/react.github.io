@@ -1,6 +1,8 @@
 import {
   SearchOutlined,
 } from "@material-ui/icons";
+import React from 'react';
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const Info = styled.div`
@@ -65,13 +67,17 @@ const Icon = styled.div`
 `;
 
 const Product = ({ item }) => {
+  const navigate = useNavigate();
   return (
-    <Container>
+    <Container onClick={(e)=>
+      {
+        navigate(`/product` , {state:item});
+      }}>
       <Circle />
       <Image src={item.img} />
       <Info>
         <Icon>
-          <SearchOutlined />
+          <SearchOutlined   />
         </Icon>
       </Info>
     </Container>

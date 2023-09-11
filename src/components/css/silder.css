@@ -1,0 +1,10 @@
+.test{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.image-circle{
+    border: 10px solid white;
+    border-radius: 50%;
+}
