@@ -11,6 +11,7 @@ import Loader from "../components/load/Loader";
 import './../components/css/test.css'
 import { useState } from "react";
 import { useEffect } from "react";
+import MessageIcon from "../components/message-icon/MessageIcon";
 
 const Home = () => {
   const [openLoader, setOpenLoader] = useState(false)
@@ -38,6 +39,7 @@ const Home = () => {
       <Products props={popularProducts}/>
       <Newsletter/>
       <Footer/>
+      <MessageIcon/>
     </div>
   );
 };

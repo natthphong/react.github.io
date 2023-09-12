@@ -70,6 +70,26 @@ const MenuItem = styled.div`
   margin-left: 25px;
   ${mobile({ fontSize: "12px", marginLeft: "10px" })}
 `;
+function scrollToBottom() {
+  const offset = 70; 
+  const targetPosition = document.body.scrollHeight - window.innerHeight + offset;
+  const currentPosition = window.scrollY;
+  const distance = targetPosition - currentPosition;
+  const steps = 100; 
+  const duration = 1000; 
+
+  const stepSize = distance / steps;
+  let step = 0;
+
+  const scrollInterval = setInterval(() => {
+    if (step < steps) {
+      window.scrollBy(0, stepSize);
+      step++;
+    } else {
+      clearInterval(scrollInterval);
+    }
+  }, duration / steps);
+}
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -91,9 +111,10 @@ const Navbar = () => {
         </Center>
         <Right>
           <MenuItem>
+        
           <Button onClick={(e)=>navigate('/products')}>Product</Button>
           </MenuItem>
-          <MenuItem>  <Button onClick={(e)=>  window.scrollTo(0, document.body.scrollHeight) }>Contact</Button>
+          <MenuItem>  <Button onClick={scrollToBottom}>Contact</Button>
           </MenuItem>
           <MenuItem>
           

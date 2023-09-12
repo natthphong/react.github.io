@@ -9,6 +9,7 @@ import { allProducts } from "../data";
 import { useState } from "react";
 import { useEffect } from "react";
 import Loader from "../components/load/Loader";
+import MessageIcon from "../components/message-icon/MessageIcon";
 const Container = styled.div``;
 
 const Title = styled.h1`
@@ -97,6 +98,7 @@ const ProductList = () => {
       <Products props={allProducts}/>
       <Newsletter />
       <Footer />
+      <MessageIcon/>
     </Container>
     </div>
   );

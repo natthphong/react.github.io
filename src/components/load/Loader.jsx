@@ -11,7 +11,8 @@ height: 100%;
 display: flex;
 justify-content: center;
 align-items: center;
-background-color: rgba(255, 255, 255, 0.5);
+-webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
 z-index: 5;
   & .MuiCircularProgress-root {
     color: grey;
