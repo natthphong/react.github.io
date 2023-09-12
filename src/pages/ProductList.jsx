@@ -6,6 +6,9 @@ import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
 import { mobile } from "../responsive";
 import { allProducts } from "../data";
+import { useState } from "react";
+import { useEffect } from "react";
+import Loader from "../components/load/Loader";
 const Container = styled.div``;
 
 const Title = styled.h1`
@@ -37,7 +40,22 @@ const Select = styled.select`
 const Option = styled.option``;
 
 const ProductList = () => {
+  const [openLoader, setOpenLoader] = useState(false)
+  useEffect(() => {
+    window.scrollTo(0,0)
+    const randomNumber = Math.floor(Math.random() * (2800 - 1000 + 1)) + 1000;
+    setOpenLoader(true);
+    const timer = setTimeout(() => {
+      setOpenLoader(false);
+    }, randomNumber); 
+    return () => {
+      clearTimeout(timer); 
+    };
+  }, []);
   return (
+    <div className={openLoader?"hello-world":""}>
+    {openLoader&&<Loader />}
+  
     <Container>
       <Navbar />
       <Announcement />
@@ -80,6 +98,7 @@ const ProductList = () => {
       <Newsletter />
       <Footer />
     </Container>
+    </div>
   );
 };
 

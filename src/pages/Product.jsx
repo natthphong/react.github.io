@@ -7,6 +7,7 @@ import { mobile } from "../responsive";
 import { useLocation, useNavigate } from "react-router";
 import { useEffect } from "react";
 import { useState } from "react";
+import Loader from "../components/load/Loader";
 
 const Container = styled.div``;
 
@@ -24,8 +25,9 @@ const ImgContainer = styled.div`
 const Image = styled.img`
   width: 100%;
   height: 90vh;
-  ${mobile({ height: "40vh" })}
+  ${mobile({ height: "40vh" ,objectFit: "cover"})}
 `;
+// object-fit: cover;
 
 const InfoContainer = styled.div`
   flex: 1;
@@ -57,15 +59,21 @@ const Price = styled.span`
 
 
 export default function Product (){
+  const [openLoader, setOpenLoader] = useState(false)
+ 
+  
   const navigate = useNavigate();
   const location = useLocation();
   const [product ,setProduct] = useState({})
   useEffect(() =>  {
     window.scrollTo(0,0)
    
-    
+    const randomNumber = Math.floor(Math.random() * (2800 - 1000 + 1)) + 1000;
+    setOpenLoader(true);
+    const timer = setTimeout(() => {
+      setOpenLoader(false);
+    }, randomNumber); 
   
-    window.scrollTo(0,0);
     
     const check = async ()=>{
       const item = await location.state;
@@ -77,11 +85,18 @@ export default function Product (){
       setProduct(item)
     }
     check()
+  
+    return () => {
+      clearTimeout(timer); 
+    };
     
   
   }, []); 
 
   return (
+    <div className={openLoader?"hello-world":""}>
+    {openLoader&&<Loader />}
+
     <Container>
     <Navbar />
       <Announcement />
@@ -102,6 +117,7 @@ export default function Product (){
       <Footer />
      
     </Container>
+    </div>
   );
 };
 
