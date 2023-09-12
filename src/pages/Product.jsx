@@ -8,6 +8,7 @@ import { useLocation, useNavigate } from "react-router";
 import { useEffect } from "react";
 import { useState } from "react";
 import Loader from "../components/load/Loader";
+import MessageIcon from "../components/message-icon/MessageIcon";
 
 const Container = styled.div``;
 
@@ -25,6 +26,7 @@ const ImgContainer = styled.div`
 const Image = styled.img`
   width: 100%;
   height: 90vh;
+  object-fit: cover;
   ${mobile({ height: "40vh" ,objectFit: "cover"})}
 `;
 // object-fit: cover;
@@ -115,7 +117,7 @@ export default function Product (){
       </Wrapper>
       <Newsletter />
       <Footer />
-     
+      <MessageIcon/>
     </Container>
     </div>
   );

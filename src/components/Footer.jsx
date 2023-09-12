@@ -94,7 +94,7 @@ const Footer = () => {
       <Left>
         <Logo>TAR.</Logo>
         <Desc>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut veniam eos deserunt in necessitatibus nihil officiis id placeat atque iste inventore voluptatem fugiat iure obcaecati minus praesentium, modi excepturi earum.
+          ดหกดหดหกดหกดหกดหดหดกหดกหดหดาสทหาสดทหกาสทดาสหกทดาสหกทดาสกหทดสทหสดกหดหดหาสดาทหสดาทกาสหทดสวหทวดสหมกสวดมหวดวหมกดวหมวดมหวกดวสหมวดมหวมดวหมกดวสหมวดมหวมดวหมวดมหว
         </Desc>
         <SocialContainer>
           <SocialIcon color="3B5999">
@@ -112,21 +112,7 @@ const Footer = () => {
           </SocialIcon>
         </SocialContainer>
       </Left>
-      <Center>
-        <Title>Useful Links</Title>
-        <List>
-          <ListItem>Home</ListItem>
-          <ListItem>Cart</ListItem>
-          <ListItem>Man Fashion</ListItem>
-          <ListItem>Woman Fashion</ListItem>
-          <ListItem>Accessories</ListItem>
-          <ListItem>My Account</ListItem>
-          <ListItem>Order Tracking</ListItem>
-          <ListItem>Wishlist</ListItem>
-          <ListItem>Wishlist</ListItem>
-          <ListItem>Terms</ListItem>
-        </List>
-      </Center>
+      
       <Right>
         <Title>Contact</Title>
         <ContactItem>
